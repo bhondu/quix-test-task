@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "be-build": "cd docker && docker-compose build",
+    "be-start": "cd docker && docker-compose up -d",
+    "be-stop": "cd docker && docker-compose stop",
+    "be-down": "cd docker && docker-compose down",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

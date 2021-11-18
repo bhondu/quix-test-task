@@ -1,0 +1,11 @@
+version: '2.4'
+
+services:
+  quix-be:
+    image: quix-be
+    container_name: quix-be
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
