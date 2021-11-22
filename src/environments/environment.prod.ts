@@ -1,3 +1,11 @@
 export const environment = {
-  production: true
+  production: true,
+  appConfig: {
+    apiUrl: '/api',
+    apiVersion: '/v1',
+  },
+  authConfig: {
+    user: 'user',
+    password: 'userPass',
+  },
 };

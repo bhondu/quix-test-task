@@ -1,0 +1,45 @@
+<h1>Transactions</h1>
+
+<div *ngIf="(error$ | async)! as error" class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseError()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  Unexpected server error:
+  <pre class="pre-scrollable">{{ error | json }}</pre>
+</div>
+
+<div *ngIf="transactionsPageParams$ | async as transactionsPageParams">
+  <div class="controls-wrapper d-flex justify-content-between pl-2 pr-2">
+    <select
+      class="custom-select mb-3"
+      style="width: auto"
+      name="status"
+      [ngModel]="transactionsPageParams.status"
+      (click)="$event.preventDefault()"
+      (ngModelChange)="onFilterChange($event)"
+    >
+      <option [ngValue]="null">All</option>
+      <option *ngFor="let item of PaymentTransactionStatus | keyvalue" [ngValue]="item.value">{{ item.value }}</option>
+    </select>
+
+    <ngb-pagination
+      *ngIf="total$ | async as total"
+      [collectionSize]="total"
+      [page]="transactionsPageParams.page + 1"
+      [pageSize]="transactionsPageParams.size"
+      [maxSize]="5"
+      [boundaryLinks]="true"
+      [directionLinks]="false"
+      [ellipses]="false"
+      [rotate]="true"
+      (pageChange)="onPageChange($event - 1)"
+    >
+      <ng-template ngbPaginationFirst>&laquo;</ng-template>
+      <ng-template ngbPaginationLast>&raquo;</ng-template>
+    </ngb-pagination>
+  </div>
+
+  <div class="p-2">
+    <transactions-table [loading]="(loading$ | async)!" [items]="(transactions$ | async)!"></transactions-table>
+  </div>
+</div>

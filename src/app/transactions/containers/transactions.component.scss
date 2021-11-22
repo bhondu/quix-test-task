@@ -1,0 +1,7 @@
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+@include media-breakpoint-down(sm) {
+  .controls-wrapper {
+    flex-direction: column;
+  }
+}

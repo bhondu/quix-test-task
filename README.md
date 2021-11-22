@@ -1,10 +1,20 @@
-# QuixTestTask
+# Test Task
+
+[Test task description and requirements](test-task.md)
+
+# ng cli
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Frontend
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
+### Backend (dev)
+
+Run `npm run be-start` for a dev server. Navigate to `http://localhost:8080/swagger-ui/`.
 
 ## Code scaffolding
 

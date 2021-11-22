@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  appConfig: {
+    apiUrl: '/api',
+    apiVersion: '/v1',
+  },
+  authConfig: {
+    user: 'user',
+    password: 'userPass',
+  }
 };
 
 /*

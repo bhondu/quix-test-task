@@ -1,9 +1,9 @@
 version: '2.4'
 
 services:
-  quix-be:
-    image: quix-be
-    container_name: quix-be
+  test-task-be:
+    image: test-task-be
+    container_name: test-task-be
     build:
       context: .
       dockerfile: Dockerfile
